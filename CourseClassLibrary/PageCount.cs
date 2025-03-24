@@ -9,6 +9,6 @@
             Value = value;
         }
 
-        public override string ToString() => $"{Value} pages";
+        public string GetPageCount() => $"{Value} pages";
     }
 }
