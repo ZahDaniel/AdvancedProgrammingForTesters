@@ -9,6 +9,6 @@
             Value = value;
         }
 
-        public string GetPageCount() => $"{Value} pages";
+        public string GetNumberOfPages() => $"{Value} pages";
     }
 }
