@@ -70,13 +70,15 @@ namespace Session1
 
             var podcast2 = podcast1;
 
-            _output.WriteLine($"The value of podcast1 before changing property is: {podcast1.GetPodcastInfo()}");
-            _output.WriteLine($"The value of podcast2 before changing property is: {podcast2.GetPodcastInfo()}");
+            _output.WriteLine($"The name of podcast1 before changing property is: {podcast1.GetPodcastInfo()}");
+            _output.WriteLine($"The name of podcast2 before changing property is: {podcast2.GetPodcastInfo()}");
 
             podcast2.Name = "Vreau sa stiu";
 
-            _output.WriteLine($"The value of podcast1 after changing property is: {podcast1.GetPodcastInfo()}");
-            _output.WriteLine($"The value of podcast2 after changing property is: {podcast2.GetPodcastInfo()}");
+            _output.WriteLine($"The name of podcast1 after changing property is: {podcast1.GetPodcastInfo()}");
+            _output.WriteLine($"The name of podcast2 after changing property is: {podcast2.GetPodcastInfo()}");
+
+            Assert.Equal(podcast1.Name, podcast2.Name);
         }
     }
 }
