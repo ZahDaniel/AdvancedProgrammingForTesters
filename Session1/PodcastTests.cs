@@ -42,7 +42,11 @@ namespace Session1
         public void IsClassic_ShouldReturnTrue_ForOldPodcasts()
         {
             var podcast = new Podcast("The Daily", "Michael Barbaro", 2009);
-            _output.WriteLine(podcast.IsPodcastReleasedBefore2010().ToString());
+
+            if (podcast.IsPodcastReleasedBefore2010())
+                _output.WriteLine("Podcast is a classic");
+            else
+                _output.WriteLine("Podcast is not a classic");
 
             Assert.True(podcast.IsPodcastReleasedBefore2010());
         }
