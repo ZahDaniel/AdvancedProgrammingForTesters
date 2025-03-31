@@ -39,6 +39,7 @@ namespace Session1
             Assert.Contains("Tech Talk", info);
             Assert.Contains("John Doe", info);
             Assert.Contains("2021", info);
+            Assert.Equal("Tech Talk hosted by John Doe, released in 2021", info);
         }
 
         [Fact]
