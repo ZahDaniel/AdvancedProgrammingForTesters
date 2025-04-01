@@ -1,4 +1,4 @@
-﻿using CourseClassLibrary;
+﻿using CourseClassLibrary.Domain.Library;
 using Xunit.Abstractions;
 
 namespace Session1

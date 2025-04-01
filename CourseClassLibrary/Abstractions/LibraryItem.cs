@@ -1,4 +1,4 @@
-﻿namespace CourseClassLibrary
+﻿namespace CourseClassLibrary.Abstractions
 {
     public abstract class LibraryItem
     {

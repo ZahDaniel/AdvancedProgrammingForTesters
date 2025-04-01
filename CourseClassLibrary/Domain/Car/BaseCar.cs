@@ -1,6 +1,6 @@
 ﻿using CourseClassLibrary.Interfaces;
 
-namespace CourseClassLibrary
+namespace CourseClassLibrary.Domain.Car
 {
     public abstract class BaseCar : ICar
     {

@@ -1,4 +1,4 @@
-﻿namespace CourseClassLibrary
+﻿namespace CourseClassLibrary.Domain.Car
 {
     public class RenaultCar : BaseCar
     {
