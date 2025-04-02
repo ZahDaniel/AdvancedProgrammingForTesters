@@ -7,7 +7,7 @@
         public int Year { get; }
 
         private const int NumberOfEpisodes = 10;
-        private readonly string _uniqueId;
+        private readonly string _uniqueId; //Guid type
 
         public Podcast(string name, string author, int year)
         {
