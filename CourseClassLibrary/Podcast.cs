@@ -7,7 +7,7 @@
         public int PodcastYear { get; }
 
         private const int MaxPodcastEpisods = 9; //small typo
-        private readonly string _podcastId;
+        private readonly string _podcastId; //Guid type
 
         public Podcast(string podcastName, string postcastHost, int postcastYear)
         {
