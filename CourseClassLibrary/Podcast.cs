@@ -5,9 +5,9 @@
         private const int PodcastEpisodesLimit = 10;
         private readonly int _podcastId;
 
-        public string PodcastName { get; set; }
+        public string PodcastName { get; set; } 
         public string PodcastHost { get; set; }
-        public int PodcastLaunchedYear { get; set; }
+        public int PodcastLaunchedYear { get; set; } // Property should be read-only. Only get accessor is needed.
 
         public Podcast(string podcastName, string podcastHost, int podcastLaunchedYear)
         {
