@@ -2,7 +2,7 @@ using System;
 
 namespace Session1
 {
-    public class Podcast
+    public class Podcast //this class should have been added in CourseClassLibrary
     {
         // Properties
         public string Name { get; set; }
