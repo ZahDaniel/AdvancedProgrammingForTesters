@@ -7,7 +7,7 @@
         public int LaunchYear { get; set; }
 
         private const int MaxEpisodes = 200;
-        private readonly string _uniqueId;
+        private readonly string _uniqueId; //Guid type
 
         public Podcast(string Name, string Host, int LaunchYear) //parameters should be camelCase
         {
