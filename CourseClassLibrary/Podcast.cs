@@ -3,7 +3,7 @@
     public class Podcast
     {
         private const int PodcastEpisodesLimit = 10;
-        private readonly int _podcastId;
+        private readonly int _podcastId; //Guid type
 
         public string PodcastName { get; set; } 
         public string PodcastHost { get; set; }
