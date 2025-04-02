@@ -10,7 +10,7 @@
 
         private const int LimitHowManyEpisodes = 10;
 
-        private readonly string _uniqueId;
+        private readonly string _uniqueId; //Guid type
 
         public Podcast(string title, string host, int year)
         {
