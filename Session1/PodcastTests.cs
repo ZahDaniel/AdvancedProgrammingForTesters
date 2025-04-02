@@ -3,7 +3,7 @@ using Xunit.Abstractions;
 
 namespace Session1
 {
-    public class PodcastTests
+    public class PodcastTests  
     {
         private readonly ITestOutputHelper _output;
 
@@ -38,6 +38,12 @@ namespace Session1
             Assert.True(podcastInfo.Contains(podcast.Name) &&
                         podcastInfo.Contains(podcast.Host) &&
                         podcastInfo.Contains(podcast.LaunchYear.ToString()));
+
+            //Using Assert.Contains provides more clarity and suitability 
+
+            //Assert.Contains(podcast.Name, podcastInfo);
+            //Assert.Contains(podcast.Host, podcastInfo);
+            //Assert.Contains(podcast.LaunchYear.ToString(), podcastInfo);
         }
 
         [Fact]
