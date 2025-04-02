@@ -9,7 +9,7 @@
         private const int EpisodeLimit = 8;
         private readonly string _uniqueId;
 
-        public Podcast(string name, string host, int yearLaunched)
+        public Podcast(string name, string host, int yearLaunched) //title instead of name
         {
             Title = name;
             Host = host;
