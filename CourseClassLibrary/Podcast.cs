@@ -7,7 +7,7 @@
         public int YearLaunched { get; }
 
         private const int EpisodeLimit = 8;
-        private readonly string _uniqueId;
+        private readonly string _uniqueId; //Guid type
 
         public Podcast(string name, string host, int yearLaunched) //title instead of name
         {
