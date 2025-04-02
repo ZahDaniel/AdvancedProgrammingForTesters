@@ -12,7 +12,7 @@
             ModelSpecificFeature = modelSpecificFeature;
         }
 
-        public override decimal CalculateAnnualTax() => Price * 0.02m; // Example tax rate for Renault
+        public override decimal CalculateAnnualTax() => Price * 0.02m; 
 
         public override string GetCarDetails() => $"{base.GetCarDetails()} - Feature: {ModelSpecificFeature}";
     }
