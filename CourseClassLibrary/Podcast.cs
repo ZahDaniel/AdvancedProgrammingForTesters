@@ -9,7 +9,7 @@
         private const int MaxEpisodes = 200;
         private readonly string _uniqueId;
 
-        public Podcast(string Name, string Host, int LaunchYear)
+        public Podcast(string Name, string Host, int LaunchYear) //parameters should be camelCase
         {
             this.Name = Name;
             this.Host = Host;
