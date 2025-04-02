@@ -6,7 +6,7 @@
         public string PodcastHost { get; set; }
         public int PodcastYear { get; }
 
-        private const int MaxPodcastEpisods = 9;
+        private const int MaxPodcastEpisods = 9; //small typo
         private readonly string _podcastId;
 
         public Podcast(string podcastName, string postcastHost, int postcastYear)
