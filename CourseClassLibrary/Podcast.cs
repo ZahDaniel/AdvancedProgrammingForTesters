@@ -27,7 +27,7 @@ namespace CourseClassLibrary
             return Year < 2010;
         }
 
-        public Guid GetUniqueId()
+        public Guid GetUniqueId() // method is not necessary. A property would be better since it's returning a Guid: public Guid UniqueId => _uniqueId; 
         {
             return _uniqueId;
         }
