@@ -7,7 +7,7 @@
         public int ReleaseYear { get; set; }
 
         private const int MaxEpisodes = 100;
-        private readonly string _uniqueId;
+        private readonly string _uniqueId; //Guid type
 
         public Podcast(string name, string host, int releaseYear)
         {
