@@ -19,8 +19,8 @@
 
         public string GetPodcastInfo() => $"{Name} hosted by {Author}, released in {Year}";
 
-        public bool isLaunchedBefore2010() => Year < 2010;
+        public bool isLaunchedBefore2010() => Year < 2010; //method should start with PascalCase: public bool IsLaunchedBefore2010()
 
-        public string UniqueId () => _uniqueId;
+        public string UniqueId () => _uniqueId; // this should be a property: public string UniqueId => _uniqueId;
     }
 }
