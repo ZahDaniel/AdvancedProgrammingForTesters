@@ -1,4 +1,4 @@
-﻿namespace CourseClassLibrary
+﻿namespace CourseClassLibrary.Domain.Library
 {
     public class Book
     {
