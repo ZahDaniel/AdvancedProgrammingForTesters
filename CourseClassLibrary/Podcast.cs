@@ -5,22 +5,27 @@
         public string Name { get; set; }
         public string Host { get; set; }
         public int LaunchYear { get; set; }
-
         private const int MaxEpisodes = 200;
-        private readonly string _uniqueId; //Guid type
+        private readonly Guid _uniqueId;
 
-        public Podcast(string Name, string Host, int LaunchYear) //parameters should be camelCase
+        public Podcast(string name, string host, int launchYear)
         {
-            this.Name = Name;
-            this.Host = Host;
-            this.LaunchYear = LaunchYear;
-            _uniqueId = Guid.NewGuid().ToString();
+            Name = name;
+            Host = host;
+            LaunchYear = launchYear;
+            _uniqueId = Guid.NewGuid();
         }
 
-        public string GetPodcastInfo() => $"{Name} hosted by {Host}, released in {LaunchYear}";
+        public string GetPodcastInfo()
+        {
+            return $"{Name} hosted by {Host}, launched in {LaunchYear}";
+        }
 
-        public bool IsPodcastLaunchedBefore2010() => LaunchYear < 2010;
+        public bool IsPodcastLaunchedBefore2010()
+        {
+            return LaunchYear < 2010;
+        }
 
-        public string UniqueId => _uniqueId;
+        public Guid UniqueId => _uniqueId;
     }
 }
