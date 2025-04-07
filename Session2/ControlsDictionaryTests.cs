@@ -64,40 +64,118 @@ namespace Session2
             PrintControlMetadata(controls, "Initial controls:");
 
             // Requirement 1: Add a new control named "passwordInput" with relevant data
+            controls.Add("passwordInput", new ControlMetadata(
+                controlType: "input",
+                isVisible: true,
+                isDisabled: false,
+                locators: new List<string>
+                {
+                    "//input[@name='password']",
+                    "//app-password-input"
+                }));
 
             // Requirement 2: Use TryAdd to add a new control "rememberMeCheckbox"
+            bool added = controls.TryAdd("rememberMeCheckbox", new ControlMetadata(
+                controlType: "checkbox",
+                isVisible: true,
+                isDisabled: false,
+                locators: new List<string>
+                {
+                    "//input[@name='remember']",
+                    "//app-remember-me-checkbox"
+                }));
+
+            if (added)
+                PrintControlMetadata(controls, "After adding 'rememberMeCheckbox':");
+            else
+                DisplayText("TryAdd failed");
+
 
             // Requirement 3: Use indexer to retrieve locators of "loginButton"
+            var loginButton = controls["loginButton"];
+            DisplayText($"Locator for login button: {string.Join(", ", loginButton.Locators)}");
 
             // Requirement 4: Use TryGetValue to safely read data for a key (e.g., "usernameInput")
+            if (controls.TryGetValue("usernameInput", out var usernameInput))
+            {
+                DisplayText($"Control Type: {usernameInput.ControlType}," +
+                    $" Is Visible: {usernameInput.IsVisible}, Is Disabled: {usernameInput.IsDisabled}");
+            }
+            else
+                DisplayText("'usernameInput' not found");
 
             // Requirement 5: Check if a key exists using ContainsKey
+            if (controls.ContainsKey("loginButton"))
+                DisplayText("'loginButton' exists in the dictionary");
+            else
+                DisplayText("'loginButton' does not exist in the dictionary");
 
             // Requirement 6: Search for a locator and return the control it belongs to
+            string searchLocator = "//input[@name='username']";
+            string foundControl = controls.FirstOrDefault(kvp => kvp.Value.Locators.Contains(searchLocator)).Key;
+
+            if (foundControl != null)
+                DisplayText($"Locator '{searchLocator}' belongs to control: {foundControl}");
+            else
+                DisplayText($"Locator '{searchLocator}' not found in any control");
+
 
             // Requirement 7: Add a locator to the "usernameInput" control
+            controls["usernameInput"].AddLocator("//input[@name='user']");
+            PrintControlMetadata(controls, "After adding locator to 'usernameInput':");
 
             // Requirement 8: Remove a locator from the "loginButton"
+            controls["loginButton"].RemoveLocator("//app-login-button");
+            PrintControlMetadata(controls, "After removing locator from 'loginButton':");
 
             // Requirement 9: Remove an entire control by key
+            controls.Remove("rememberMeCheckbox");
+            PrintControlMetadata(controls, "After removing 'rememberMeCheckbox':");
 
             // Requirement 10: Display only the keys
+            var controlKeys = controls.Keys.ToList();
+            DisplayText("Control Keys: " + string.Join(", ", controlKeys));
 
             // Requirement 11: Display all locators from all controls
+            var allLocators = controls.Values.SelectMany(c => c.Locators).ToList();
+            DisplayText("All Locators: " + string.Join(", ", allLocators));
 
             // Requirement 12: Count how many controls remain
+            int controlCount = controls.Count;
+            DisplayText($"Count on remain controls: {controlCount}");
 
             // Requirement 13: Set the visibility of 'usernameInput' to false
+            controls["usernameInput"].SetVisibility(false);
+            PrintControlMetadata(controls, "After setting 'usernameInput' visibility to false:");
 
             // Requirement 14: Set the disabled state of 'passwordInput' to true
+            controls["passwordInput"].SetDisabled(true);
+            PrintControlMetadata(controls, "After setting 'passwordInput' disabled state to true:");
 
             // Requirement 15: Display all controls that are disabled
+            var disabledControls = controls.FirstOrDefault(kvp => kvp.Value.IsDisabled);
+            if (disabledControls.Key != null)
+                DisplayText($"Disabled control: {disabledControls.Key}");
+            else
+                DisplayText("No disabled controls found");
 
             // Requirement 16: Display all controls that are NOT visible
+            var notVisibleControls = controls.FirstOrDefault(kvp => !kvp.Value.IsVisible);
+            if (notVisibleControls.Key != null)
+                DisplayText($"Not visible control: {notVisibleControls.Key}");
+            else
+                DisplayText("All controls are visible");
 
             // Requirement 17: Count controls that are visible AND not disabled
+            var visibleAndNotDisabledCount = controls.Count(c => c.Value.IsVisible && !c.Value.IsDisabled);
+            DisplayText($"Count of controls that are visible and not disabled: {visibleAndNotDisabledCount}");
 
             // Requirement 18: Clear the dictionary and verify it's empty
+            controls.Clear();
+            if (controls.Count == 0)
+                DisplayText("Controls dictionary is empty");
+            else
+                DisplayText("Controls dictionary is not empty");
         }
     }
 }
