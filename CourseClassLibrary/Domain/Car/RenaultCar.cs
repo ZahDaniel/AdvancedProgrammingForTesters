@@ -1,19 +1,27 @@
-﻿namespace CourseClassLibrary.Domain.Car
+﻿using CourseClassLibrary.Interfaces;
+
+namespace CourseClassLibrary.Domain.Car
 {
-    public class RenaultCar : BaseCar
+    public class RenaultCar : ICar
     {
+        public string Model { get; }
+        public string Brand { get; }
+        public string LicensePlate { get; }
+        public decimal Price { get; }
+
         public string ModelSpecificFeature { get; }
 
-        public RenaultCar(string model, string brand, decimal price, string modelSpecificFeature)
-            : base(model, brand, price)
+        public RenaultCar(string model, string brand, string licensePlate, decimal price, string modelSpecificFeature)
         {
-            if (string.IsNullOrWhiteSpace(modelSpecificFeature))
-                throw new ArgumentException("Model-specific feature cannot be empty.");
+            Model = model;
+            Brand = brand;
+            LicensePlate = licensePlate;
+            Price = price;
             ModelSpecificFeature = modelSpecificFeature;
         }
 
-        public override decimal CalculateAnnualTax() => Price * 0.02m; // Example tax rate for Renault
+        public decimal CalculateAnnualTax() => Price * 0.02m; // Example tax rate for Renault
 
-        public override string GetCarDetails() => $"{base.GetCarDetails()} - Feature: {ModelSpecificFeature}";
+        public string GetCarDetails() => $"{Brand} {Model} - Feature: {ModelSpecificFeature} and {Price}";
     }
 }
