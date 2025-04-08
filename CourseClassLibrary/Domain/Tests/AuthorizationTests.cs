@@ -54,25 +54,25 @@ namespace CourseClassLibrary.Domain.Tests
 
 
         [Fact]
-        public void AuthorizationTest()
+        public async Task AuthorizationTest()
         {
             //Initialize the browser
-             InitializeAsync();
+              await InitializeAsync();
 
             //Navigate to the authorization page
             string authorizationPageUrl = "https://example.com/authorization"; 
-            OpenPageAsync(authorizationPageUrl);
+            await OpenPageAsync(authorizationPageUrl);
 
             //Fill in the form with credentials
-             Page.FillAsync("#username", "admin"); 
-             Page.FillAsync("#password", "admin123"); 
+             await Page.FillAsync("#username", "admin"); 
+             await Page.FillAsync("#password", "admin123"); 
 
             //Click the authorization button
-             ClickElementAsync("#loginButton"); 
+             await ClickElementAsync("#loginButton"); 
 
             //Verify if authorization was successful
-            bool isAuthorized = CheckSuccess("#welcomeMessage");
-            Assert.True(isAuthorized, "Authorization fail : Welcome message not found.");
+            bool isAuthorized = CheckSuccess("#elementIsVisibleAfterLogin");
+            Assert.True(isAuthorized, "Authorization fail : Element not found");
         }
     }
 }
