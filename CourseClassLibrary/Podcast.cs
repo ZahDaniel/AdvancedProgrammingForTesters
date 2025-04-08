@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CourseClassLibrary
+﻿namespace CourseClassLibrary
 {
     public class Podcast
     {
@@ -13,7 +7,7 @@ namespace CourseClassLibrary
         public int ReleaseYear { get; set; }
 
         private const int MaxEpisodes = 100;
-        private readonly string _uniqueId;
+        private readonly string _uniqueId; //Guid type
 
         public Podcast(string name, string host, int releaseYear)
         {
