@@ -30,8 +30,6 @@ namespace AnimalTypeTests
             Animal cat = new Cat();
 
             // Act & Assert
-            //var exception = Assert.Throws<NotImplementedException>(() => cat.MakeSound());
-            //Assert.Equal("Cats don't make sounds in this context.", exception.Message);
             var result = cat.MakeSound();
 
         }
