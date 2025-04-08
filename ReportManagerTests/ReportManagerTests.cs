@@ -19,7 +19,6 @@ namespace ReportManagerTests
             Assert.Equal("Generating Report...", result);  // Example assert
         }
 
-        // Test all functionalities together (which is hard to isolate for unit testing)
         [Fact]
         public void FullReportProcess_ShouldWorkTogether()
         {

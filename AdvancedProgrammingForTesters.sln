@@ -10,9 +10,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Session 3", "Session 3", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SRP", "SRP", "{0C0B07BC-7850-474D-B239-DDB37664170B}"
-	ProjectSection(SolutionItems) = preProject
-		IReportProcessor.cs = IReportProcessor.cs
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportManagerFunctions", "RepottManager\ReportManagerFunctions.csproj", "{94A69070-544B-4E08-B943-1C8C1470A813}"
 EndProject
@@ -31,21 +28,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalTypeTests", "AnimalTypeTests\AnimalTypeTests.csproj", "{4C52EF8B-CBE0-436C-927C-2AA907CE39E2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISP", "ISP", "{2C2387ED-7E0C-48DE-A565-98D9CBFF8CF0}"
-	ProjectSection(SolutionItems) = preProject
-		UploadPopup.cs = UploadPopup.cs
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaces", "Interfaces", "{1B31C61E-7C65-445C-AD87-24AD2643A448}"
-	ProjectSection(SolutionItems) = preProject
-		IDialogPopup.cs = IDialogPopup.cs
-		IUploadPopup.cs = IUploadPopup.cs
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DIP", "DIP", "{C7089D3B-52F5-4A7A-BC6E-04ADBF2353C6}"
-	ProjectSection(SolutionItems) = preProject
-		CookiePopup.cs = CookiePopup.cs
-		CookieTest.cs = CookieTest.cs
-	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISP", "ISP\ISP.csproj", "{BD545324-8820-4CF8-A183-8C0923C7763C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIP", "DIP\DIP.csproj", "{4DCA4A15-3796-472C-B9C6-C6A58213ED7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +73,14 @@ Global
 		{4C52EF8B-CBE0-436C-927C-2AA907CE39E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C52EF8B-CBE0-436C-927C-2AA907CE39E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C52EF8B-CBE0-436C-927C-2AA907CE39E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD545324-8820-4CF8-A183-8C0923C7763C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD545324-8820-4CF8-A183-8C0923C7763C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD545324-8820-4CF8-A183-8C0923C7763C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD545324-8820-4CF8-A183-8C0923C7763C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DCA4A15-3796-472C-B9C6-C6A58213ED7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DCA4A15-3796-472C-B9C6-C6A58213ED7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DCA4A15-3796-472C-B9C6-C6A58213ED7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DCA4A15-3796-472C-B9C6-C6A58213ED7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,8 +96,9 @@ Global
 		{A22AE361-2CA6-491F-AA67-CCF96167C51D} = {B23DCF40-AB11-481A-ACE8-597D3C3A548A}
 		{4C52EF8B-CBE0-436C-927C-2AA907CE39E2} = {B23DCF40-AB11-481A-ACE8-597D3C3A548A}
 		{2C2387ED-7E0C-48DE-A565-98D9CBFF8CF0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
-		{1B31C61E-7C65-445C-AD87-24AD2643A448} = {2C2387ED-7E0C-48DE-A565-98D9CBFF8CF0}
 		{C7089D3B-52F5-4A7A-BC6E-04ADBF2353C6} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{BD545324-8820-4CF8-A183-8C0923C7763C} = {2C2387ED-7E0C-48DE-A565-98D9CBFF8CF0}
+		{4DCA4A15-3796-472C-B9C6-C6A58213ED7C} = {C7089D3B-52F5-4A7A-BC6E-04ADBF2353C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6982061-311C-408C-B5CC-216002995EA4}
