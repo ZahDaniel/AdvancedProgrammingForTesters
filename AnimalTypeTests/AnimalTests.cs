@@ -14,7 +14,7 @@ namespace AnimalTypeTests
         public void MakeSound_ShouldReturnBark_WhenDogIsSubstitutedForAnimal()
         {
             // Arrange
-           ISoundMaker dog = new Dog();
+            Animal dog = new Dog();
 
             // Act
             var result = dog.MakeSound();
@@ -31,6 +31,7 @@ namespace AnimalTypeTests
 
             // Act & Assert
             var result = cat.MakeSound();
+
         }
 
     }
