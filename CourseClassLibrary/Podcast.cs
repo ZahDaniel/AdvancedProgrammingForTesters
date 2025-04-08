@@ -11,7 +11,7 @@ namespace CourseClassLibrary
 
         private readonly int _episodeLimit = 20; 
 
-        private readonly string _podcastId;
+        private readonly string _podcastId; //Guid type
 
         public Podcast(string name, string hostName, int launchYear)
         {
