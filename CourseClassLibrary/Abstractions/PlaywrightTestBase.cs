@@ -1,12 +1,13 @@
-﻿using Microsoft.Playwright;
+﻿using CourseClassLibrary.Interfaces;
+using Microsoft.Playwright;
 
 namespace CourseClassLibrary.Abstractions
 {
-    public abstract class PlaywrightTestBase
+    public abstract class PlaywrightTestBase : ITestBase
     {
-        protected IPage Page { get; set; } = default!;
-        protected IBrowser? Browser { get; set; }
-        protected IBrowserContext? Context { get; set; }
+        public IPage Page { get; set; } = default!;
+        public IBrowser? Browser { get; set; }
+        public IBrowserContext? Context { get; set; }
 
         public async Task InitializeAsync()
         {
