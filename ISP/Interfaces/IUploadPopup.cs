@@ -1,6 +1,4 @@
-﻿using ISP.Interfaces;
-
-public interface IUploadPopup : IPopup
+﻿public interface IUploadPopup : IDialogPopup
 {
     void SetUploadProgress(int percentage);
     bool ValidateFileType(string fileName);

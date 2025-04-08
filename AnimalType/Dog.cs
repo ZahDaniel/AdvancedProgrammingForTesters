@@ -1,10 +1,10 @@
 ﻿namespace AnimalType
 {
-    public class Dog : ISoundMaker
+    public class Dog : Animal
     {
-        public string MakeSound()
+        public override string MakeSound()
         {
-            return "Ham";
+            return "Bark";
         }
     }
 }
