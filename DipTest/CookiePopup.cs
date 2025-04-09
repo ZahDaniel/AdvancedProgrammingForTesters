@@ -1,6 +1,7 @@
-﻿using Microsoft.Playwright;
+﻿using DipTest;
+using Microsoft.Playwright;
 
-public class CookiePopup
+public class CookiePopup : IButtonClicker
 {
     private readonly IPage _page;
 
@@ -19,5 +20,3 @@ public class CookiePopup
         await _page.Locator("#rejectCookiesButton").ClickAsync();
     }
 }
-
-

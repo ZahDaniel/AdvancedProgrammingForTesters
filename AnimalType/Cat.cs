@@ -1,10 +1,10 @@
 ﻿namespace AnimalType
 {
-    public class Cat : Animal
+    public class Cat : ISoundMaker
     {
-        public override string MakeSound()
+        public string MakeSound()
         {
-            throw new NotImplementedException("Cats don't make sounds in this context.");
+            return "Meow";
         }
     }
 }

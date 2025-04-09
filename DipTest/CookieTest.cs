@@ -1,17 +1,17 @@
-﻿using Microsoft.Playwright;
+﻿using DipTest;
 
 public class CookieTest
 {
-    private readonly CookiePopup _cookiePopup;
+    private readonly IButtonClicker _buttonClicker;
 
-    public CookieTest(IPage page)
+    public CookieTest(IButtonClicker buttonClicker)
     {
-        _cookiePopup = new CookiePopup(page); 
+        _buttonClicker = buttonClicker;
     }
 
     [Fact]
     public async Task TestAcceptCookies()
     {
-        await _cookiePopup.AcceptCookiesAsync();
+        await _buttonClicker.AcceptCookiesAsync();
     }
 }
