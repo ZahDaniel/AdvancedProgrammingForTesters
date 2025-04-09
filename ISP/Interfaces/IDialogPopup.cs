@@ -1,7 +1,7 @@
-﻿public interface IDialogPopup
+﻿using ISP.Interfaces;
+
+public interface IDialogPopup : IPopup
 {
-    void Show();
-    void Close();
     void SetTitle(string title);
     void SetMessage(string message);
 }
