@@ -24,17 +24,17 @@ namespace PaymentProcessorTests
         }
 
         [Fact]
-        public void ProcessPayment_PayPal_ShouldReturnCorrectMessage()
+        public void ProcessPayment_BankTransfer_ShouldReturnCorrectMessage()
         {
             // Arrange
             var paymentAmount = 200.00;
-            var paymentMethod = "PayPal";
+            var paymentMethod = "BankTransfer";
 
             // Act
             var result = _paymentProcessor.ProcessPayment(paymentMethod, paymentAmount);
 
             // Assert
-            Assert.Equal($"Processing PayPal payment of ${paymentAmount}...", result);
+            Assert.Equal($"Processing Bank Transfer payment of ${paymentAmount}...", result);
         }
     }
 }
