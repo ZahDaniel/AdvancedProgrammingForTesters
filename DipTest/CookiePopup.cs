@@ -1,6 +1,7 @@
-﻿using Microsoft.Playwright;
+﻿using DipTest;
+using Microsoft.Playwright;
 
-public class CookiePopup
+public class CookiePopup : IButtonClicker
 {
     private readonly IPage _page;
 
