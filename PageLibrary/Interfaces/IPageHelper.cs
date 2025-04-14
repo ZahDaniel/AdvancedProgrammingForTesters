@@ -4,6 +4,7 @@
     {
         void Click(string selector);
         void Fill(string selector, string text);
-        void UploadFile(string selector, string filePath);
+
+        //Removed UploadFile method, due to Interface Segregation Principle 
     }
 }

@@ -5,11 +5,12 @@ namespace TestProject1
 {
     public class LoginTests
     {
-        private readonly LoginTestLogger _logger;
+        private readonly ILoginTestLogger _logger;
 
-        public LoginTests(ITestOutputHelper output)
+        // Dependency inversion principle, using an interface instead of a concrete class
+        public LoginTests(ITestOutputHelper output, ILoginTestLogger loginTestLogger)
         {
-            _logger = new LoginTestLogger(output);
+            _logger = loginTestLogger;
         }
 
         [Fact]

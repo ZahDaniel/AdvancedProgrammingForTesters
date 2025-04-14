@@ -2,7 +2,7 @@
 
 namespace LoggerTests
 {
-    public class LoginTestLogger
+    public class LoginTestLogger : ILoginTestLogger
     {
         private readonly ITestOutputHelper _output;
 
