@@ -5,7 +5,7 @@ namespace TestProject1
 {
     public class LoginTests
     {
-        private readonly LoginTestLogger _logger;
+        private readonly ILoginLogger _logger;
 
         public LoginTests(ITestOutputHelper output)
         {

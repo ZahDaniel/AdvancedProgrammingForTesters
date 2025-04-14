@@ -2,7 +2,7 @@
 
 namespace PageLibrary
 {
-    public class LoginPageHelper : IPageHelper
+    public class LoginPageHelper : IClickable, IFillable
     {
         public void Click(string selector)
         {
@@ -12,11 +12,6 @@ namespace PageLibrary
         public void Fill(string selector, string text)
         {
             Console.WriteLine($"Filling '{text}' in {selector}");
-        }
-
-        public void UploadFile(string selector, string filePath)
-        {
-            Console.WriteLine($"[Ignored] Upload file called in LoginPageHelper for {filePath} at {selector}");
         }
     }
 }

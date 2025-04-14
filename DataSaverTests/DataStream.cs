@@ -1,6 +1,6 @@
 ﻿namespace DataSaverTests
 {
-    public class DataStream
+    public class DataStream : IWriteableDataStream
     {
         public virtual void Write(byte[] data)
         {
