@@ -1,6 +1,6 @@
 ﻿namespace DataSaverTests
 {
-    public class DataStream
+    public class DataStream : IWriteDataStream
     {
         public virtual void Write(byte[] data)
         {
@@ -17,4 +17,5 @@
         {
             Console.WriteLine("Stream closed.");
         }
-    }}
+    }
+}

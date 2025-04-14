@@ -2,9 +2,9 @@
 {
     public class DataSaver
     {
-        private readonly DataStream _stream;
+        private readonly IWriteDataStream _stream;
 
-        public DataSaver(DataStream stream)
+        public DataSaver(IWriteDataStream stream)
         {
             _stream = stream;
         }
