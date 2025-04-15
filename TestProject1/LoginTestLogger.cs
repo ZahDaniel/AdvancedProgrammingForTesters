@@ -2,8 +2,9 @@
 
 namespace LoggerTests
 {
-    public class LoginTestLogger
+    public class LoginTestLogger : ILoginLogger
     {
+        //OCP
         private readonly ITestOutputHelper _output;
 
         public LoginTestLogger(ITestOutputHelper output)

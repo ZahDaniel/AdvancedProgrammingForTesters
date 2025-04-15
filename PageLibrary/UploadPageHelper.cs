@@ -2,7 +2,7 @@
 
 namespace PageLibrary
 {
-    public class LoginPageHelper : IPageHelper
+    public class UploadPageHelper : IPageHelper, IUploadHelper
     {
         public void Click(string selector)
         {
@@ -13,11 +13,10 @@ namespace PageLibrary
         {
             Console.WriteLine($"Filling '{text}' in {selector}");
         }
-        /*
+
         public void UploadFile(string selector, string filePath)
         {
             Console.WriteLine($"[Ignored] Upload file called in LoginPageHelper for {filePath} at {selector}");
-        }*/
+        }
     }
 }
-

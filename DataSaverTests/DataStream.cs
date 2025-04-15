@@ -1,6 +1,8 @@
-﻿namespace DataSaverTests
+﻿using DataSaverTests.Interfaces;
+
+namespace DataSaverTests
 {
-    public class DataStream
+    public class DataStream : IReadDataStream, IWriteDataStream
     {
         public virtual void Write(byte[] data)
         {

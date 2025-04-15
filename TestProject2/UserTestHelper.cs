@@ -1,22 +1,30 @@
+using UserTest;
+
 namespace TestProject2
 {
     public class UserTestHelper
     {
+        //SRP
+        //OCP
+
         public User GenerateValidUser()
         {
-            var user = new User
+            return new User
             {
                 Username = "testuser",
                 Email = "test@example.com",
                 Age = 25
             };
+        }
 
-            if (string.IsNullOrEmpty(user.Username) || !user.Email.Contains("@") || user.Age < 18)
-            {
-                throw new ArgumentException("Invalid test user generated");
-            }
+        [Fact]
+        public void UserValidator_Should_Return_True_For_Valid_User()
+        {
+            var helper = new UserTestHelper();
+            var user = helper.GenerateValidUser();
+            var userValidator = new UserValidator();
 
-            return user;
+            Assert.True(userValidator.IsUserValid(user));
         }
     }
 }

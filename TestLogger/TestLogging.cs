@@ -1,21 +1,31 @@
-﻿namespace TestLogger
+﻿using TestLogger;
+
+namespace TestLogger
 {
     public class TestLogging
     {
-        public void Log(string message, string type)
+        //SRP
+        //OCP
+        //DIP
+        private readonly ILogger _logger;
+
+        public TestLogging(ILogger logger)
         {
-            if (type == "console")
-            {
-                Console.WriteLine(message);
-            }
-            else if (type == "file")
-            {
-                File.AppendAllText("testlog.txt", message + "\n");
-            }
-            else
-            {
-                throw new NotSupportedException("Unknown log type");
-            }
+            _logger = logger;
+        }
+
+        public void Log(string message)
+        {
+            _logger.Log(message);
+        }
+
+        public void TestLog()
+        {
+           var consoleLogger = new TestLogging(new ConsoleLogger());
+           consoleLogger.Log("This is a console log test");
+           
+           var fileLogger = new TestLogging(new FileLogger());
+           fileLogger.Log("text123");
         }
     }
 }
