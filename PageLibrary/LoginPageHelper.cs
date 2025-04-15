@@ -14,10 +14,10 @@ namespace PageLibrary
             Console.WriteLine($"Filling '{text}' in {selector}");
         }
 
-        public void UploadFile(string selector, string filePath)
-        {
-            Console.WriteLine($"[Ignored] Upload file called in LoginPageHelper for {filePath} at {selector}");
-        }
+        //public void UploadFile(string selector, string filePath)
+        //{
+        //    Console.WriteLine($"[Ignored] Upload file called in LoginPageHelper for {filePath} at {selector}");
+        //}
     }
 }
 

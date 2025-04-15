@@ -4,6 +4,8 @@
     {
         void Click(string selector);
         void Fill(string selector, string text);
-        void UploadFile(string selector, string filePath);
+
+        //void UploadFile(string selector, string filePath);
+        //Interface Segregation Principle
     }
 }

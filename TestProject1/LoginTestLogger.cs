@@ -1,8 +1,9 @@
-﻿using Xunit.Abstractions;
+﻿using LoggerTests.Interface;
+using Xunit.Abstractions;
 
 namespace LoggerTests
 {
-    public class LoginTestLogger
+    public class LoginTestLogger : ILoginTestLogger
     {
         private readonly ITestOutputHelper _output;
 

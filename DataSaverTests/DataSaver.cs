@@ -1,19 +1,22 @@
-﻿namespace DataSaverTests
+﻿using DataSaverTests.Interface;
+
+namespace DataSaverTests
 {
     public class DataSaver
     {
-        private readonly DataStream _stream;
+        //private readonly DataStream _stream;
+        private readonly IWriteDataStream _writeDataStream;
 
-        public DataSaver(DataStream stream)
+        public DataSaver(IWriteDataStream writeDataStream)
         {
-            _stream = stream;
+            _writeDataStream = writeDataStream;
         }
 
         public void Save()
         {
             Console.WriteLine("Saving data...");
-            _stream.Write(new byte[] { 1, 2, 3 });
-            _stream.Close();
+            _writeDataStream.Write(new byte[] { 1, 2, 3 });
+            _writeDataStream.Close();
             Console.WriteLine("Save completed.");
         }
     }
