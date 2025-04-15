@@ -9,7 +9,8 @@ namespace TestProject1
 
         public LoginTests(ITestOutputHelper output)
         {
-            _logger = new LoginTestLogger(output);
+            var testOutputLogger = new TestOutputLogger(output);
+            _logger = new LoginTestLogger(testOutputLogger);
         }
 
         [Fact]

@@ -2,20 +2,16 @@
 {
     public class TestLogging
     {
-        public void Log(string message, string type)
+        private readonly ILogger _logger;
+        public TestLogging(ILogger logger)
         {
-            if (type == "console")
-            {
-                Console.WriteLine(message);
-            }
-            else if (type == "file")
-            {
-                File.AppendAllText("testlog.txt", message + "\n");
-            }
-            else
-            {
-                throw new NotSupportedException("Unknown log type");
-            }
+            _logger = logger;
         }
+
+        public void Log(string message)
+        {
+            _logger.Log(message);
+        }
+
     }
 }

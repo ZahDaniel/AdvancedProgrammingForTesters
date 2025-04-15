@@ -4,21 +4,23 @@ namespace LoggerTests
 {
     public class LoginTestLogger
     {
-        private readonly ITestOutputHelper _output;
 
-        public LoginTestLogger(ITestOutputHelper output)
+        private readonly ILogger _logger;
+
+        public LoginTestLogger(ILogger logger)
         {
-            _output = output;
+            _logger = logger;
         }
 
         public void LogLoginStart(string username)
         {
-            _output.WriteLine($"Starting login for user: {username}");
+            _logger.Log($"Starting login for user: {username}");
         }
 
         public void LogLoginSuccess()
         {
-            _output.WriteLine("Login successful.");
+            _logger.Log("Login successful.");
         }
+
     }
 }

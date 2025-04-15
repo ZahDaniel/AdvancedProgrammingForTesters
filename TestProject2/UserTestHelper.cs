@@ -1,7 +1,12 @@
+using UserTest;
+
 namespace TestProject2
 {
     public class UserTestHelper
     {
+
+        private readonly UserValidator validator = new UserValidator();
+
         public User GenerateValidUser()
         {
             var user = new User
@@ -11,12 +16,10 @@ namespace TestProject2
                 Age = 25
             };
 
-            if (string.IsNullOrEmpty(user.Username) || !user.Email.Contains("@") || user.Age < 18)
-            {
-                throw new ArgumentException("Invalid test user generated");
-            }
+            validator.Validate(user);
 
             return user;
         }
+
     }
 }
