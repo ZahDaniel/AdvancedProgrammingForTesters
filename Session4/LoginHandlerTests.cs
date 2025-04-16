@@ -15,7 +15,9 @@ namespace Session4
         [Fact]
         public void Login_ReturnsWelcomeMessage_InEnglish()
         {
-            var loginHandler = new LoginHandler();
+            var englishService = new EnglishLoginMessageService();
+            var loginHandler = new LoginHandler(englishService);
+
             var welcomeMessage = loginHandler.Login("Andrada");
 
             _output.WriteLine(welcomeMessage);
@@ -26,7 +28,13 @@ namespace Session4
         [Fact]
         public void Login_ReturnsWelcomeMessage_InFrench()
         {
+            var frenchService = new FrenchLoginMessageService();
+            var loginHandler = new LoginHandler(frenchService);
 
+            var result = loginHandler.Login("Maria");
+
+            _output.WriteLine(result);
+            Assert.Equal("Bienvenue, Maria!", result);
         }
     }
 }
