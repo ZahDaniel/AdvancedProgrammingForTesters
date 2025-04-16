@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PaymentProcessingLibrary
 {
-    internal class BankTransferPaymentProcessor : IPaymentProcessor
+    public class BankTransferPaymentProcessor : IPaymentProcessor
     {
         public string Process(double amount)
         {

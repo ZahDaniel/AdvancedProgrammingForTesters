@@ -5,6 +5,8 @@ namespace PaymentProcessorTests
     public class PaymentProcessorUnitTests
     {
         private readonly PaymentProcessor _paymentProcessor;
+        private readonly CreditCardPaymentProcessor _creditCardPaymentProcessor; // Added missing field
+        private readonly BankTransferPaymentProcessor _bankTransferPaymentPrcessor; // Added missing field
 
         public PaymentProcessorUnitTests()
         {
@@ -18,11 +20,9 @@ namespace PaymentProcessorTests
         {
             // Arrange
             var paymentAmount = 100.00;
-           // var paymentMethod = "CreditCard";
 
             // Act
-           // var result = _paymentProcessor.ProcessPayment(paymentMethod, paymentAmount);
-           var result = _creditCardPaymentProcessor.Process(paymentAmount);
+            var result = _creditCardPaymentProcessor.Process(paymentAmount);
 
             // Assert
             Assert.Equal($"Processing Credit Card payment of ${paymentAmount}...", result);
@@ -33,11 +33,9 @@ namespace PaymentProcessorTests
         {
             // Arrange
             var paymentAmount = 200.00;
-           // var paymentMethod = "BankTransfer";
 
             // Act
-           // var result = _paymentProcessor.ProcessPayment(paymentMethod, paymentAmount);
-           var result = _bankTransferPaymentPrcessor.Process(paymentAmount);
+            var result = _bankTransferPaymentPrcessor.Process(paymentAmount);
 
             // Assert
             Assert.Equal($"Processing Bank Transfer payment of ${paymentAmount}...", result);
