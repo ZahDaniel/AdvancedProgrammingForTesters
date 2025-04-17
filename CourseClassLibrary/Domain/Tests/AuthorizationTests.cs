@@ -1,11 +1,10 @@
 ﻿using CourseClassLibrary.Interfaces;
-using Microsoft.Playwright;
-using Xunit.Abstractions;
 
 namespace CourseClassLibrary.Domain.Tests
 {
     public class AuthorizationTests : ITestBase
     {
+        //add needed packages 
         private readonly ITestOutputHelper _output;
 
         public AuthorizationTests(ITestOutputHelper output) => _output = output;
@@ -62,6 +61,7 @@ namespace CourseClassLibrary.Domain.Tests
             return false;
         }
 
+        //[Fact] //missing
         public async Task AuthorizationTest()
         {
             await InitializeAsync();
