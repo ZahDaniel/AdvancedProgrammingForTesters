@@ -99,7 +99,8 @@ namespace Session2
             // Requirement 4: Use TryGetValue to safely read data for a key (e.g., "usernameInput")
             if (controls.TryGetValue("usernameInput", out var usernameInput))
             {
-                DisplayText($"Locators for loginButton: {string.Join(", ", locators)}");
+                DisplayText($"Locators for loginButton: {string.Join(", ", locators)}"); // Correct: DisplayText($"Locators for usernameInput: {string.Join(", ", usernameInput.Locators)}");
+
             }
             else
             {
