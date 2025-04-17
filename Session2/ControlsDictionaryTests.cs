@@ -99,7 +99,7 @@ namespace Session2
             DisplayText($"Button locators are: {string.Join(" | ", loginButonLocators.Locators)}");
 
             // Requirement 4: Use TryGetValue to safely read data for a key (e.g., "usernameInput")
-            if(controls.TryGetValue("abc", out var usernameInput))
+            if(controls.TryGetValue("abc", out var usernameInput))    ///if(controls.TryGetValue("usernameInput", out var usernameInput))
                 DisplayText($"Username input locators are: {string.Join(" | ", usernameInput.Locators)}");
             else
                 DisplayText("Key not found");

@@ -15,7 +15,7 @@ namespace CourseClassLibrary.Domain.Tests
         public override bool CheckSuccess(string selector)
         {
             var element = Page.Locator(selector);
-            if (!element.IsVisibleAsync().Result)
+            if (!element.IsVisibleAsync().Result) //var isVisible = element.IsVisibleAsync().GetAwaiter().GetResult(); e indicat sa nu folosim .Result, doarece asa reducem riscul de deadlock
                 throw new InvalidOperationException($"Element with selector '{selector}' is not visible.");
             return base.CheckSuccess(selector);
         }
