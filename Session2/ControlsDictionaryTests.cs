@@ -159,12 +159,26 @@ namespace Session2
             else
                 DisplayText("No disabled controls found");
 
+
+            ///Correct:var disabledControls = controls.Where(kvp => kvp.Value.IsDisabled).Select(kvp => kvp.Key).ToList();
+            //if (disabledControls.Any())
+            //    DisplayText($"Disabled controls: {string.Join(", ", disabledControls)}");
+            //else
+            //    DisplayText("No disabled controls found");
+
             // Requirement 16: Display all controls that are NOT visible
             var notVisibleControls = controls.FirstOrDefault(kvp => !kvp.Value.IsVisible);
             if (notVisibleControls.Key != null)
                 DisplayText($"Not visible control: {notVisibleControls.Key}");
             else
                 DisplayText("All controls are visible");
+
+            //Correct: var notVisibleControls = controls.Where(kvp => !kvp.Value.IsVisible).Select(kvp => kvp.Key).ToList();
+            //if (notVisibleControls.Any())
+            //    DisplayText($"Not visible controls: {string.Join(", ", notVisibleControls)}");
+            //else
+            //    DisplayText("All controls are visible");
+
 
             // Requirement 17: Count controls that are visible AND not disabled
             var visibleAndNotDisabledCount = controls.Count(c => c.Value.IsVisible && !c.Value.IsDisabled);
