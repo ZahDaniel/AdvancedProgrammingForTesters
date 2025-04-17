@@ -54,7 +54,7 @@ namespace CourseClassLibrary.Domain.Tests
             await _page.GotoAsync(url);
         }
 
-        [Fact]
+        [Fact]  //install package
         public async Task AuthorizationTest()
         {
             {

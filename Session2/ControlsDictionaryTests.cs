@@ -121,6 +121,18 @@ namespace Session2
             // Requirement 6: Search for a locator and return the control it belongs to
             string searchLocator = "//input[@name='username']";
 
+    //       Correct:  var controlWithLocator = controls.Values
+    //.FirstOrDefault(control => control.Locators.Contains(searchLocator));
+    //        if (controlWithLocator != null)
+    //        {
+    //            DisplayText($"Control found for locator '{searchLocator}': {controlWithLocator}");
+    //        }
+    //        else
+    //        {
+    //            DisplayText($"No control found for locator '{searchLocator}'.");
+    //        }
+
+
             // Requirement 7: Add a locator to the "usernameInput" control
             if (controls.TryGetValue("usernameInput", out var usernameInputControl))
             {
