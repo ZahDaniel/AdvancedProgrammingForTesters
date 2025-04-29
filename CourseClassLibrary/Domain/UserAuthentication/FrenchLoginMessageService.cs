@@ -2,11 +2,11 @@
 
 namespace CourseClassLibrary.Domain.UserAuthentication
 {
-    public class EnglishLoginMessageService : ILoginMessageService
+    public class FrenchLoginMessageService : ILoginMessageService
     {
         public string GetWelcomeMessage(string username)
         {
-            return $"Welcome, {username}!";
+            return $"Bienvenue, {username}!";
         }
     }
 }
