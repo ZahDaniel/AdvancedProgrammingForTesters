@@ -47,6 +47,8 @@ namespace Session4
             PrintBooks(filteredClassic, "Classic filtering:");
 
             // LINQ filtering
+            var filteredLinq = books.Where(b => b.Author == "Robert").ToList();
+            PrintBooks(filteredLinq, "LINQ filtering:");
         }
 
         [Fact]
@@ -65,10 +67,18 @@ namespace Session4
             PrintBooks(classicSortedBooks, "Classic sorting:");
 
             // LINQ sorting
+            var linqSortedBooks = originalBooks.OrderBy(b => b.Title).ToList();
 
             // LINQ descending sort
+            var linqSortedBooksDesc = originalBooks.OrderByDescending(b => b.Title).ToList();
+            PrintBooks(linqSortedBooksDesc, "LINQ descending sort:");
 
             // LINQ then by
+            var linqSortedBooksThenBy = originalBooks
+                .OrderBy(b => b.Author)
+                .ThenBy(b => b.Title)
+                .ToList();
+            PrintBooks(linqSortedBooksThenBy, "LINQ then by:");
         }
 
         [Fact]
@@ -105,6 +115,8 @@ namespace Session4
             DisplayText("Classic titles: " + string.Join(", ", titlesClassic));
 
             // LINQ projection
+            var titlesLinq = books.Select(b => b.Title).ToList();
+            DisplayText("LINQ titles: " + string.Join(", ", titlesLinq));
 
             // LINQ projection with selectMany
             var bookTags = new List<(string Title, string[] Tags)>
@@ -112,6 +124,10 @@ namespace Session4
                 ("Clean Code", new[] { "clean", "style" }),
                 ("QA Guide", new[] { "testing", "automation" })
             };
+            var tagsLinq = bookTags
+                .SelectMany(b => b.Tags, (b, tag) => new { b.Title, Tag = tag })
+                .ToList();
+            DisplayText("LINQ SelectMany tags: " + string.Join(", ", tagsLinq.Select(t => $"{t.Title}: {t.Tag}")));
         }
 
         [Fact]
@@ -209,6 +225,14 @@ namespace Session4
                 DisplayText("Classic join: " + entry);
 
             // LINQ join using method syntax
+            var joinedLinq = books
+                .Join(authorCountries,
+                    book => book.Author,
+                    author => author.Author,
+                    (book, author) => $"{book.Title} written from {author.Country}")
+                .ToList();
+            foreach (var entry in joinedLinq)
+                DisplayText("LINQ join: " + entry);
         }
 
         [Fact]
@@ -231,7 +255,11 @@ namespace Session4
             }
 
             // LINQ grouping
-        }
+            var groupedLinq = books
+                .GroupBy(b => b.Author)
+                .ToDictionary(g => g.Key, g => g.ToList());
+
+           }
 
         [Fact]
         public void Generation_RangeOfIds()
@@ -254,10 +282,16 @@ namespace Session4
             var emptyBooks = new List<Book>();
 
             // LINQ element access - First
+            DisplayText("First book: " + books.First().GetBookInfo());
+            DisplayText("First book (or default): " + emptyBooks.FirstOrDefault()?.GetBookInfo() ?? "No books available");
 
             // LINQ element access - Last
+            DisplayText("Last book: " + books.Last().GetBookInfo());
+            DisplayText("Last book (or default): " + emptyBooks.LastOrDefault()?.GetBookInfo() ?? "No books available");
 
             // LINQ element access - ElementAt
+            DisplayText("Element at index 1: " + books.ElementAt(1).GetBookInfo());
+            DisplayText("Element at index 5 (or default): " + emptyBooks.ElementAtOrDefault(5)?.GetBookInfo() ?? "No books available");
         }
 
         [Fact]
@@ -272,6 +306,8 @@ namespace Session4
             DisplayText("Classic combined actions: " + string.Join(", ", combinedClassic));
 
             // LINQ concatenation
+            var combinedLinq = list1.Concat(list2).ToList();
+            DisplayText("LINQ combined actions: " + string.Join(", ", combinedLinq));
         }
     }
 }
