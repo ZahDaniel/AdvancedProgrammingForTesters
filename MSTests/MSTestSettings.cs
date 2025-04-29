@@ -1,0 +1,2 @@
+﻿[assembly: Parallelize(Scope = ExecutionScope.MethodLevel)] // All test methods run in parallel
+//[assembly: Parallelize(Scope = ExecutionScope.ClassLevel)] // All test classes run in parallel, but methods inside a class run sequentially
