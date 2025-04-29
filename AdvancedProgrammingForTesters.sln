@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISP", "ISP\ISP.csproj", "{B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DipTest", "DipTest\DipTest.csproj", "{89880D03-A2A8-4547-A024-490937907855}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session4", "Session4\Session4.csproj", "{736660D2-5074-4468-9306-7A88B96EADCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{89880D03-A2A8-4547-A024-490937907855}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89880D03-A2A8-4547-A024-490937907855}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89880D03-A2A8-4547-A024-490937907855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{736660D2-5074-4468-9306-7A88B96EADCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{736660D2-5074-4468-9306-7A88B96EADCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{736660D2-5074-4468-9306-7A88B96EADCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{736660D2-5074-4468-9306-7A88B96EADCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
