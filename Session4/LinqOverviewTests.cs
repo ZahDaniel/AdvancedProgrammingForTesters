@@ -23,6 +23,14 @@ namespace Session4
             };
 
             // LINQ Query Syntax
+            var filteredBooks = from book in books
+                                where book.Author == "Alice"
+                                select book;
+            
+            foreach (var book in filteredBooks)
+            {
+                _output.WriteLine(book.GetBookInfo());
+            }
         }
 
         [Fact]
@@ -36,6 +44,12 @@ namespace Session4
             };
 
             // LINQ Method Syntax
+            var filteredBooks = books.Where(book => book.Author == "Alice");
+
+            foreach (var book in filteredBooks)
+            {
+                _output.WriteLine(book.GetBookInfo());
+            }
         }
 
         [Fact]
@@ -44,6 +58,19 @@ namespace Session4
             var numbers = new List<int> { 1, 2, 3, 4, 5 };
 
             // LINQ Deferred Execution: the query is not executed until iterated
+            var evenNumbers = numbers.Where(n =>
+            {
+                _output.WriteLine($"Evaluating: {n}");
+                return n % 2 == 0;
+            });
+
+            _output.WriteLine("LINQ created, but not executed.");
+
+            _output.WriteLine("Now iterating");
+            foreach (var number in evenNumbers)
+            {
+                _output.WriteLine($"Even number: {number}");
+            }
         }
 
         [Fact]
@@ -52,6 +79,18 @@ namespace Session4
             var numbers = new List<int> { 1, 2, 3, 4, 5 };
 
             // LINQ Immediate Execution: using ToList forces execution right away
+            var evenNumbers = numbers.Where(n =>
+            {
+                _output.WriteLine($"Evaluating: {n}");
+                return n % 2 == 0;
+            }).ToList();
+
+            _output.WriteLine("Evens calculated immediately with ToList: ");
+
+            foreach (var number in evenNumbers)
+            {
+                _output.WriteLine($"Even number: {number}");
+            }
         }
     }
 }
