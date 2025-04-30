@@ -1,4 +1,7 @@
-﻿using RestSharp;
+﻿using Microsoft.VisualStudio.TestPlatform.Utilities;
+using Newtonsoft.Json;
+using RestSharp;
+using System.Net;
 
 namespace XUnitPlayground
 {
