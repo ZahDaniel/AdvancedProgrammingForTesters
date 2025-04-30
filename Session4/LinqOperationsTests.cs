@@ -87,6 +87,10 @@ namespace Session4
             DisplayText($"Classic - Sum: {sum}, Max: {max}");
 
             // LINQ aggregation
+            var linqSum = pageCounts.Sum();
+            var linqMax = pageCounts.Max();
+
+            DisplayText($"LINQ - Sum: {linqSum}, Max: {linqMax}");
         }
 
         [Fact]
